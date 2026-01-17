@@ -6,10 +6,8 @@ import time
 
 app = Flask(__name__)
 
-# Shared traffic light state
 current_lights = {"ns": "red", "ew": "red"}
 
-# Traffic light controller
 def traffic_light_controller():
     while True:
         # NS GREEN, EW RED
@@ -32,7 +30,6 @@ def traffic_light_controller():
         current_lights["ew"] = "yellow"
         time.sleep(2)
 
-# Flask routes
 @app.route("/")
 def index():
     return render_template("index.html")
@@ -43,10 +40,9 @@ def lights():
 
 # Main
 if __name__ == "__main__":
-    # Start the traffic light controller in a daemon thread
     t = threading.Thread(target=traffic_light_controller)
     t.daemon = True
     t.start()
 
-    # Run Flask without the debug reloader to prevent thread conflicts
+
     app.run(host="0.0.0.0", port=5000, debug=True, use_reloader=False)
