@@ -38,7 +38,6 @@ def index():
 def lights():
     return jsonify(current_lights)
 
-# Main
 if __name__ == "__main__":
     t = threading.Thread(target=traffic_light_controller)
     t.daemon = True
@@ -46,3 +45,4 @@ if __name__ == "__main__":
 
 
     app.run(host="0.0.0.0", port=5000, debug=True, use_reloader=False)
+
