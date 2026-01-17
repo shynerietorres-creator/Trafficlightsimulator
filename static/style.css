@@ -8,7 +8,6 @@
 body {
     background-color: #2e2e2e;
     margin: 0;
-    font-family: Arial, sans-serif;
 }
 
 .site-header {
@@ -197,3 +196,4 @@ body {
     right: 150px;
     bottom: 150px;
 }
+
