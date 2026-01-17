@@ -1,0 +1,199 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    background-color: #2e2e2e;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.site-header {
+    background-color: #9b9b9b;
+    color: #fff;
+    padding: 20px 50px;
+    font-size: 28px;
+    font-weight: bold;
+    border-bottom-left-radius: 40px;
+    border-bottom-right-radius: 40px;
+    box-shadow: black 15px 15px;
+}
+
+.text {
+    position: relative;
+    width: 59%;
+    background-color: #9b9b9b;
+    padding: 40px;
+    float: right;
+    border-radius: 40px;
+    color: #f0f0f0;
+    line-height: 1.6;
+    font-size: 18px;
+    transform: translateY(80px);
+    box-shadow: black 15px 15px;
+    border: 1px solid;
+    margin-right: 40px;
+}
+
+.box {
+    position: relative;
+    width: 59%;
+    background-color: #9b9b9b;
+    padding: 40px;
+    float: right;
+    border-radius: 40px;
+    color: #f0f0f0;
+    line-height: 1.6;
+    font-size: 18px;
+    transform: translateY(140px);
+    box-shadow: black 15px 15px;
+    border: 1px solid;
+    margin-right: 40px;
+}
+
+.truthtable {
+    position: relative;
+    width: 100%;
+}
+.truthtable th,
+.truthtable td {
+    border: 1px solid;
+    padding: 8px;
+    text-align: center;
+}
+
+.container {
+    padding-left: 100px;
+    transform: scale(0.50);
+    transform-origin: top left;
+}
+
+.intersection {
+    position: relative;
+    width: 980px;
+    height: 980px;
+    background-color: #555;
+    top: 380px;
+    left: 150px;
+}
+
+.road.vertical {
+    position: absolute;
+    width: 300px;
+    height: 100%;
+    background-color: #333;
+    left: 340px;
+}
+
+.road.horizontal {
+    position: absolute;
+    height: 300px;
+    width: 100%;
+    background-color: #333;
+    top: 350px;
+}
+
+
+
+
+.light-box {
+    position: absolute;
+    width: 50px;
+    height: 140px;
+    background-color: rgb(0, 0, 0);
+    border-radius: 6px;
+    padding: 6px;
+}
+.light.ns { top: 185px; left: 265px; }
+.light.ew { top: 665px; left: 655px; }
+.light div {
+    width: 35px;
+    height: 35px;
+    background-color: #474747;
+    border-radius: 50%;
+    margin: 6px auto;
+}
+.red.active { background-color: red; }
+.yellow.active { background-color: yellow; }
+.green.active { background-color: lime; }
+
+
+
+.lines {
+    position: absolute;
+    background-color: white;
+}
+.lines.kaliwa { top: 500px; left: 0; width: 340px; height: 9px; }
+.lines.kanan { top: 500px; left: 640px; width: 340px; height: 9px; }
+.lines.taas { top: 0; left: 485px; width: 10px; height: 345px; }
+.lines.baba { bottom: 0; left: 485px; width: 10px; height: 330px; }
+.lines.NSstopline { width: 155px; height: 3px; top: 345px; left: 340px; }
+.lines.EWstopline { width: 3px; height: 150px; top: 500px; left: 337px; }
+.lines.SNstopline { width: 155px; height: 3px; top: 650px; left: 485px; }
+.lines.WEstopline { width: 3px; height: 150px; top: 350px; left: 640px; }
+
+
+.car {
+    position: absolute;
+    background-color: dodgerblue;
+    border-radius: 6px;
+}
+
+.car.ns {
+    top: -100px;
+    left: 380px;
+    width: 70px;
+    height: 100px;
+}
+.car.ew {
+    top: 545px;
+    left: -100px;
+    width: 100px;
+    height: 70px;
+}
+.car.ns.approach {
+    animation: approachNS 2s ease-out forwards;
+}
+.car.ns.cross {
+    animation: crossNS 3s ease-in forwards;
+}
+.car.ew.approach {
+    animation: approachEW 2s ease-out forwards;
+}
+.car.ew.cross {
+    animation: crossEW 3s ease-in forwards;
+}
+ 
+@keyframes approachNS {
+    from { top: -100px; }
+    to { top: 220px; }
+}
+
+@keyframes crossNS {
+    from { top: 220px; } 
+    to { top: 1000px;}
+}
+ 
+@keyframes approachEW {
+    from { left: -100px; }
+    to { left: 220px; }
+}
+
+@keyframes crossEW {
+    from { left: 220px; } 
+    to { left: 1000px;}
+}
+
+
+
+.border {
+    position: relative;
+    width: 1275px;
+    height: 1275px;
+    border: 150px solid #181818;
+    right: 150px;
+    bottom: 150px;
+}

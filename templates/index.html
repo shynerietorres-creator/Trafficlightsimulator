@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Traffic Light Simulator</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+    <div class="page">
+        <header class="site-header"> Traffic Light Simulator </header>
+            <aside class="text">
+                <h3><strong>BRIEF EXPLANATION OF THE PROGRAM =</strong></h3><br/>
+                <P> 
+                
+                    This program simulates the real-life traffic light system in an intersection. 
+                As shown, the traffic box has 3 lights: <strong>red, yellow, and green.</strong>
+                When the NS car (blue-box) enters the intersection, the lights require 
+                the NS car to stop for <strong>5 seconds</strong> while the EW car crossed the intersection. 
+                The NS lights change from red to yellow for <strong>2 seconds.</strong> Then, the NS car is 
+                allowed to cross the intersection while the EW lights are turned red for <strong>5 seconds.</strong>
+                Then, the process loops <italic>infinitely</italic> between the 2 cars.
+                </P>
+            </aside>
+
+            <div class="box">
+                <h3><strong> TRUTH TABLE OF THE TRAFFIC LIGHT =</strong></h3></br>
+                <table class="truthtable">
+                    <thead>
+                        <tr> 
+                            <th> NS </th> <th> EW </th> <th> NSRED </th> <th> NSYELLOW </th> <th> NSGREEN </th> <th> EWRED </th> <th> EWYELLOW </th> <th> EWGREEN </th>
+                        </tr>
+                    </thead>
+                    <tbody> 
+                        <tr> <td> 0 </td> <td> 0 </td> <td> 0 </td> <td> 0 </td> <td> 1 </td> <td> 1 </td> <td> 0 </td> <td> 0 </td> </tr>
+                        <tr> <td> 0 </td> <td> 1 </td> <td> 0 </td> <td> 1 </td> <td> 0 </td> <td> 1 </td> <td> 0 </td> <td> 0 </td> </tr>
+                        <tr> <td> 1 </td> <td> 0 </td> <td> 1 </td> <td> 0 </td> <td> 0 </td> <td> 0 </td> <td> 1 </td> <td> 0 </td> </tr>
+                        <tr> <td> 1 </td> <td> 1 </td> <td> 1 </td> <td> 0 </td> <td> 0 </td> <td> 0 </td> <td> 0 </td> <td> 1 </td> </tr>
+                    </tbody>
+                </table>
+            </div> 
+    
+        
+            <div class="container">
+                <div class="intersection">
+
+                    <!-- Roads -->
+                    <div class="road vertical"></div>
+                    <div class="road horizontal"></div>
+
+                    <!-- Traffic Light: North-South -->
+                    <div class="light-box light ns">
+                        <div class="red"></div>
+                        <div class="yellow"></div>
+                        <div class="green"></div>
+                    </div>
+
+                    <!-- Traffic Light: East-West -->
+                    <div class="light-box light ew">
+                        <div class="red"></div>
+                        <div class="yellow"></div>
+                        <div class="green"></div>
+                    </div>
+
+                    <!-- ROADLines -->
+                    <div class="lines kaliwa"></div>
+                    <div class="lines kanan"></div>
+                    <div class="lines taas"></div>
+                    <div class="lines baba"></div>
+                        <div class="lines NSstopline"></div>
+                        <div class="lines EWstopline"></div>
+                        <div class="lines SNstopline"></div>
+                        <div class="lines WEstopline"></div>
+
+                    <!-- Cars -->
+                    <div class="car ns"></div>
+                    <div class="car ew"></div>
+
+                    <!-- BORDER -->
+                    <div class="border"></div>
+                </div>
+            </div>
+    </div>
+</body>
+
+
+
+<script>
+    // CAR //
+    const ewCar = document.querySelector ('.car.ew');
+    const nsCar = document.querySelector ('.car.ns');
+
+    let ewState = 'idle'; 
+    let nsState = 'idle';
+
+
+    function onEWGreen() {
+        ewCar.classList.remove('approach');
+        void ewCar.offsetWidth;
+        ewCar.classList.add('cross');
+        ewState = 'crossed';
+    }
+
+    function onNSGreen() {
+        nsCar.classList.remove('approach');
+        void nsCar.offsetWidth;
+        nsCar.classList.add('cross');
+        nsState = 'crossed';
+    }
+
+    function resetCar(car, dir) {
+        car.classList.remove('cross', 'approach');
+        if (dir === 'ew') car.style.left = '-100px';
+        if (dir === 'ns') car.style.top = '-100px';
+    }
+
+
+async function updateLights() {
+    try {
+        const res = await fetch('/lights');
+        const data = await res.json();
+
+        // NS lights
+        document.querySelector('.light.ns .red').classList.toggle('active', data.ns === 'red');
+        document.querySelector('.light.ns .yellow').classList.toggle('active', data.ns === 'yellow');
+        document.querySelector('.light.ns .green').classList.toggle('active', data.ns === 'green');
+
+        // EW lights
+        document.querySelector('.light.ew .red').classList.toggle('active', data.ew === 'red');
+        document.querySelector('.light.ew .yellow').classList.toggle('active', data.ew === 'yellow');
+        document.querySelector('.light.ew .green').classList.toggle('active', data.ew === 'green');
+
+        if ((data.ew === 'red' || data.ew === 'yellow') && ewState !== 'approached') {
+                ewCar.classList.remove('cross');
+                ewCar.classList.add('approach');
+                ewState = 'approached';
+        }
+
+        if (data.ew === 'green' && ewState === 'approached') {
+            onEWGreen();
+        }
+
+        if (ewState === 'crossed') {
+            ew.addEventListener('animationend', function handler() {
+                resetCar(ewCar, 'ew');
+                ewState = 'idle';
+                ewCar.removeEventListener('animationend', handler);
+            });
+        }
+
+        if ((data.ns === 'red' || data.ns === 'yellow') && nsState !== 'approached') {
+                nsCar.classList.remove('cross');
+                nsCar.classList.add('approach');
+                nsState = 'approached';
+        }
+
+        if (data.ns === 'green' && nsState === 'approached') {
+            onNSGreen();
+        }
+
+        if (nsState === 'crossed') {
+            ns.addEventListener('animationend', function handler() {
+                resetCar(nsCar, 'ns');
+                nsState = 'idle';
+                nsCar.removeEventListener('animationend', handler);
+            });
+        }
+
+    } catch (err) {
+        console.error("Error fetching lights:", err);
+    }
+}
+
+// Update lights per 1s
+setInterval(updateLights, 1000);
+updateLights();
+</script>
+
+</body>
+</html>
