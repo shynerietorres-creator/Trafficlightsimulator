@@ -40,11 +40,11 @@ body {
 .box {
     position: relative;
     width: 59%;
-    background-color: #9b9b9b;
+    background-color: #000000;
     padding: 40px;
     float: right;
     border-radius: 40px;
-    color: #000000;
+    color: #9b9b9b;
     line-height: 1.6;
     font-size: 22px;
     transform: translateY(170px);
@@ -196,6 +196,7 @@ body {
     right: 150px;
     bottom: 150px;
 }
+
 
 
 
