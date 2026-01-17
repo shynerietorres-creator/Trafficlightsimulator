@@ -8,6 +8,7 @@
 body {
     background-color: #2e2e2e;
     margin: 0;
+    font-family: Arial, sans-serif;
 }
 
 .site-header {
@@ -21,7 +22,7 @@ body {
     box-shadow: black 15px 15px;
 }
 
-.text .box {
+.text {
     position: relative;
     width: 59%;
     background-color: #9b9b9b;
@@ -32,6 +33,22 @@ body {
     line-height: 1.6;
     font-size: 18px;
     transform: translateY(80px);
+    box-shadow: black 15px 15px;
+    border: 1px solid;
+    margin-right: 40px;
+}
+
+.box {
+    position: relative;
+    width: 59%;
+    background-color: #9b9b9b;
+    padding: 40px;
+    float: right;
+    border-radius: 40px;
+    color: #f0f0f0;
+    line-height: 1.6;
+    font-size: 18px;
+    transform: translateY(140px);
     box-shadow: black 15px 15px;
     border: 1px solid;
     margin-right: 40px;
@@ -79,6 +96,9 @@ body {
     top: 350px;
 }
 
+
+
+
 .light-box {
     position: absolute;
     width: 50px;
@@ -100,6 +120,8 @@ body {
 .yellow.active { background-color: yellow; }
 .green.active { background-color: lime; }
 
+
+
 .lines {
     position: absolute;
     background-color: white;
@@ -112,6 +134,7 @@ body {
 .lines.EWstopline { width: 3px; height: 150px; top: 500px; left: 337px; }
 .lines.SNstopline { width: 155px; height: 3px; top: 650px; left: 485px; }
 .lines.WEstopline { width: 3px; height: 150px; top: 350px; left: 640px; }
+
 
 .car {
     position: absolute;
@@ -163,6 +186,8 @@ body {
     from { left: 220px; } 
     to { left: 1000px;}
 }
+
+
 
 .border {
     position: relative;
