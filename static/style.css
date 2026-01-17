@@ -20,7 +20,22 @@ body {
     box-shadow: black 15px 15px;
 }
 
-.text .box{
+.text {
+    position: relative;
+    width: 50%;
+    background-color: #9b9b9b;
+    padding: 40px;
+    float: right;
+    border-radius: 40px;
+    line-height: 1.6;
+    font-size: 18px;
+    transform: translateY(80px);
+    box-shadow: black 15px 15px;
+    border: 1px solid;
+    margin-right: 40px;
+}
+
+.box {
     position: relative;
     width: 50%;
     background-color: #9b9b9b;
@@ -178,6 +193,7 @@ body {
     right: 150px;
     bottom: 150px;
 }
+
 
 
 
