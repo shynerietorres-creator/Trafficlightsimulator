@@ -1,2 +1,1 @@
-Creator of the website: Shynerie Andrea E. Torres for BSIT-1B
-This is for Discrete Structures 1 as a final ouput for our First Semester in Bachelor of Science in Information Technology. Every code there is done WITHOUT the use of AI and not DONE by AI. 
+Creator of the website: Shynerie Andrea E. Torres for BSIT-1B. This is for Discrete Structures 1 as a final ouput for our First Semester in Bachelor of Science in Information Technology. Every code there is done WITHOUT the use of AI and not DONE by AI. 
