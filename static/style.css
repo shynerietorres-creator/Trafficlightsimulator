@@ -52,97 +52,109 @@ body {
     width: 90%;
     max-width: 1000px;
     margin: 0 auto;
-    position: relative;
+    text-align: center;
+}
+
+.intersection-wrapper {
+    width: 100%;
+    max-width: 980px;
+    margin: 0 auto;
+    transform: scale(1);
+    transform-origin: top left;
 }
 
 .intersection {
     position: relative;
-    width: 100%;
-    padding-top: 100%;
+    width: 980px;
+    height: 980px;
     background-color: #555;
+    margin: 0 auto;
 }
 
+/* Roads */
 .road.vertical {
     position: absolute;
-    width: 30%;
+    width: 300px;
     height: 100%;
     background-color: #333;
-    left: 35%;
+    left: 340px;
     top: 0;
 }
 
 .road.horizontal {
     position: absolute;
-    height: 30%;
     width: 100%;
+    height: 300px;
     background-color: #333;
-    top: 35%;
+    top: 340px;
     left: 0;
 }
 
+/* Traffic Lights */
 .light-box {
     position: absolute;
-    width: 5%;
-    height: 14%;
+    width: 50px;
+    height: 140px;
     background-color: rgb(0, 0, 0);
     border-radius: 6px;
-    padding: 1%;
+    padding: 6px;
 }
 
-.light.ns { top: 10%; left: 10%; }
-.light.ew { top: 65%; left: 65%; }
+.light.ns { top: 185px; left: 265px; }
+.light.ew { top: 665px; left: 655px; }
 
 .light div {
-    width: 70%;
-    height: 20%;
+    width: 35px;
+    height: 35px;
     background-color: #474747;
     border-radius: 50%;
-    margin: 5% auto;
+    margin: 6px auto;
 }
 
 .red.active { background-color: red; }
 .yellow.active { background-color: yellow; }
 .green.active { background-color: lime; }
 
+/* Lines */
 .lines {
     position: absolute;
     background-color: white;
 }
 
-.lines.kaliwa { top: 50%; left: 0; width: 35%; height: 1%; }
-.lines.kanan { top: 50%; left: 65%; width: 35%; height: 1%; }
-.lines.taas { top: 0; left: 48%; width: 1%; height: 35%; }
-.lines.baba { bottom: 0; left: 48%; width: 1%; height: 35%; }
-.lines.NSstopline { width: 15%; height: 0.5%; top: 35%; left: 35%; }
-.lines.EWstopline { width: 0.5%; height: 15%; top: 50%; left: 34%; }
-.lines.SNstopline { width: 15%; height: 0.5%; top: 65%; left: 48%; }
-.lines.WEstopline { width: 0.5%; height: 15%; top: 35%; left: 65%; }
+.lines.kaliwa { top: 500px; left: 0; width: 340px; height: 9px; }
+.lines.kanan { top: 500px; left: 640px; width: 340px; height: 9px; }
+.lines.taas { top: 0; left: 485px; width: 10px; height: 345px; }
+.lines.baba { bottom: 0; left: 485px; width: 10px; height: 330px; }
+.lines.NSstopline { width: 155px; height: 3px; top: 345px; left: 340px; }
+.lines.EWstopline { width: 3px; height: 150px; top: 500px; left: 337px; }
+.lines.SNstopline { width: 155px; height: 3px; top: 650px; left: 485px; }
+.lines.WEstopline { width: 3px; height: 150px; top: 350px; left: 640px; }
 
+/* Cars */
 .car {
     position: absolute;
     background-color: dodgerblue;
     border-radius: 6px;
 }
 
-.car.ns { top: -10%; left: 38%; width: 7%; height: 10%; }
-.car.ew { top: 55%; left: -10%; width: 10%; height: 7%; }
+.car.ns { top: -100px; left: 380px; width: 70px; height: 100px; }
+.car.ew { top: 545px; left: -100px; width: 100px; height: 70px; }
 
 .car.ns.approach { animation: approachNS 2s ease-out forwards; }
 .car.ns.cross { animation: crossNS 3s ease-in forwards; }
 .car.ew.approach { animation: approachEW 2s ease-out forwards; }
 .car.ew.cross { animation: crossEW 3s ease-in forwards; }
 
-@keyframes approachNS { from { top: -10%; } to { top: 22%; } }
-@keyframes crossNS { from { top: 22%; } to { top: 100%; } }
-@keyframes approachEW { from { left: -10%; } to { left: 22%; } }
-@keyframes crossEW { from { left: 22%; } to { left: 100%; } }
+@keyframes approachNS { from { top: -100px; } to { top: 220px; } }
+@keyframes crossNS { from { top: 220px; } to { top: 1000px; } }
+@keyframes approachEW { from { left: -100px; } to { left: 220px; } }
+@keyframes crossEW { from { left: 220px; } to { left: 1000px; } }
 
 .border {
     position: relative;
-    width: 100%;
-    max-width: 1275px;
-    aspect-ratio: 1 / 1;
-    border: 12% solid #181818;
+    width: 1275px;
+    height: 1275px;
+    border: 150px solid #181818;
     margin: 0 auto;
 }
 
@@ -153,10 +165,14 @@ body {
         font-size: 0.9rem;
     }
 
-    .truthtable { width: 95%; }
+    .truthtable {
+        width: 95%;
+    }
 
-    .intersection { padding-top: 90%; }
+    .intersection-wrapper {
+        transform: scale(0.6);
+    }
 
-    .car.ns { width: 10%; height: 12%; }
-    .car.ew { width: 12%; height: 10%; }
+    .car.ns { width: 70px; height: 100px; }
+    .car.ew { width: 100px; height: 70px; }
 }
