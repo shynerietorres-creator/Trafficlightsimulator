@@ -23,7 +23,7 @@ body {
 
 .text .box{
     position: relative;
-    width: 59%;
+    width: 50%;
     background-color: #9b9b9b;
     padding: 40px;
     float: right;
@@ -179,5 +179,6 @@ body {
     right: 150px;
     bottom: 150px;
 }
+
 
 
