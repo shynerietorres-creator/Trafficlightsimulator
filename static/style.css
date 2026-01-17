@@ -13,7 +13,7 @@ body {
 
 .site-header {
     background-color: #9b9b9b;
-    color: #fff;
+    color: black;
     padding: 20px 50px;
     font-size: 28px;
     font-weight: bold;
@@ -29,7 +29,7 @@ body {
     padding: 40px;
     float: right;
     border-radius: 40px;
-    color: #f0f0f0;
+    color: black;
     line-height: 1.6;
     font-size: 18px;
     transform: translateY(80px);
@@ -45,7 +45,7 @@ body {
     padding: 40px;
     float: right;
     border-radius: 40px;
-    color: #f0f0f0;
+    color: black;
     line-height: 1.6;
     font-size: 18px;
     transform: translateY(140px);
@@ -197,3 +197,4 @@ body {
     right: 150px;
     bottom: 150px;
 }
+
