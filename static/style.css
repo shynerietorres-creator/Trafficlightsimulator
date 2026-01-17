@@ -4,136 +4,119 @@
     box-sizing: border-box;
 }
 
-
 body {
     background-color: #2e2e2e;
-    margin: 0;
+    font-family: sans-serif;
 }
 
 .site-header {
     background-color: #9b9b9b;
     color: #fff;
-    padding: 20px 50px;
-    font-size: 28px;
+    padding: 20px 5%;
+    font-size: 2rem;
     font-weight: bold;
     border-bottom-left-radius: 40px;
     border-bottom-right-radius: 40px;
     box-shadow: black 15px 15px;
+    text-align: center;
 }
 
-.text {
-    position: relative;
-    width: 59%;
+.text, .box {
+    width: 90%;
+    max-width: 600px;
+    margin: 20px auto;
     background-color: #9b9b9b;
-    padding: 40px;
-    float: right;
+    padding: 20px;
     border-radius: 40px;
     color: #f0f0f0;
     line-height: 1.6;
-    font-size: 18px;
-    transform: translateY(80px);
-    box-shadow: black 15px 15px;
+    font-size: 1rem;
+    box-shadow: black 10px 10px;
     border: 1px solid;
-    margin-right: 40px;
-}
-
-.box {
-    position: relative;
-    width: 59%;
-    background-color: #9b9b9b;
-    padding: 40px;
-    float: right;
-    border-radius: 40px;
-    color: #f0f0f0;
-    line-height: 1.6;
-    font-size: 18px;
-    transform: translateY(140px);
-    box-shadow: black 15px 15px;
-    border: 1px solid;
-    margin-right: 40px;
 }
 
 .truthtable {
-    position: relative;
-    width: 100%;
+    width: 90%;
+    max-width: 600px;
+    margin: 20px auto;
+    overflow-x: auto;
 }
-.truthtable th,
-.truthtable td {
+
+.truthtable th, .truthtable td {
     border: 1px solid;
     padding: 8px;
     text-align: center;
 }
 
 .container {
-    padding-left: 100px;
-    transform: scale(0.50);
-    transform-origin: top left;
+    width: 90%;
+    max-width: 1000px;
+    margin: 0 auto;
+    position: relative;
 }
 
 .intersection {
     position: relative;
-    width: 980px;
-    height: 980px;
+    width: 100%;
+    padding-top: 100%;
     background-color: #555;
-    top: 380px;
-    left: 150px;
 }
 
 .road.vertical {
     position: absolute;
-    width: 300px;
+    width: 30%;
     height: 100%;
     background-color: #333;
-    left: 340px;
+    left: 35%;
+    top: 0;
 }
 
 .road.horizontal {
     position: absolute;
-    height: 300px;
+    height: 30%;
     width: 100%;
     background-color: #333;
-    top: 350px;
+    top: 35%;
+    left: 0;
 }
-
-
-
 
 .light-box {
     position: absolute;
-    width: 50px;
-    height: 140px;
+    width: 5%;
+    height: 14%;
     background-color: rgb(0, 0, 0);
     border-radius: 6px;
-    padding: 6px;
+    padding: 1%;
 }
-.light.ns { top: 185px; left: 265px; }
-.light.ew { top: 665px; left: 655px; }
+
+.light.ns { top: 10%; left: 10%; }
+.light.ew { top: 65%; left: 65%; }
+
 .light div {
-    width: 35px;
-    height: 35px;
+    width: 70%;
+    height: 20%;
     background-color: #474747;
     border-radius: 50%;
-    margin: 6px auto;
+    margin: 5% auto;
 }
+
 .red.active { background-color: red; }
 .yellow.active { background-color: yellow; }
 .green.active { background-color: lime; }
-
-
 
 .lines {
     position: absolute;
     background-color: white;
 }
-.lines.kaliwa { top: 500px; left: 0; width: 340px; height: 9px; }
-.lines.kanan { top: 500px; left: 640px; width: 340px; height: 9px; }
-.lines.taas { top: 0; left: 485px; width: 10px; height: 345px; }
-.lines.baba { bottom: 0; left: 485px; width: 10px; height: 330px; }
-.lines.NSstopline { width: 155px; height: 3px; top: 345px; left: 340px; }
-.lines.EWstopline { width: 3px; height: 150px; top: 500px; left: 337px; }
-.lines.SNstopline { width: 155px; height: 3px; top: 650px; left: 485px; }
-.lines.WEstopline { width: 3px; height: 150px; top: 350px; left: 640px; }
 
+.lines.kaliwa { top: 50%; left: 0; width: 35%; height: 1%; }
+.lines.kanan { top: 50%; left: 65%; width: 35%; height: 1%; }
+.lines.taas { top: 0; left: 48%; width: 1%; height: 35%; }
+.lines.baba { bottom: 0; left: 48%; width: 1%; height: 35%; }
+.lines.NSstopline { width: 15%; height: 0.5%; top: 35%; left: 35%; }
+.lines.EWstopline { width: 0.5%; height: 15%; top: 50%; left: 34%; }
+.lines.SNstopline { width: 15%; height: 0.5%; top: 65%; left: 48%; }
+.lines.WEstopline { width: 0.5%; height: 15%; top: 35%; left: 65%; }
 
 .car {
     position: absolute;
@@ -141,59 +124,39 @@ body {
     border-radius: 6px;
 }
 
-.car.ns {
-    top: -100px;
-    left: 380px;
-    width: 70px;
-    height: 100px;
-}
-.car.ew {
-    top: 545px;
-    left: -100px;
-    width: 100px;
-    height: 70px;
-}
-.car.ns.approach {
-    animation: approachNS 2s ease-out forwards;
-}
-.car.ns.cross {
-    animation: crossNS 3s ease-in forwards;
-}
-.car.ew.approach {
-    animation: approachEW 2s ease-out forwards;
-}
-.car.ew.cross {
-    animation: crossEW 3s ease-in forwards;
-}
- 
-@keyframes approachNS {
-    from { top: -100px; }
-    to { top: 220px; }
-}
+.car.ns { top: -10%; left: 38%; width: 7%; height: 10%; }
+.car.ew { top: 55%; left: -10%; width: 10%; height: 7%; }
 
-@keyframes crossNS {
-    from { top: 220px; } 
-    to { top: 1000px;}
-}
- 
-@keyframes approachEW {
-    from { left: -100px; }
-    to { left: 220px; }
-}
+.car.ns.approach { animation: approachNS 2s ease-out forwards; }
+.car.ns.cross { animation: crossNS 3s ease-in forwards; }
+.car.ew.approach { animation: approachEW 2s ease-out forwards; }
+.car.ew.cross { animation: crossEW 3s ease-in forwards; }
 
-@keyframes crossEW {
-    from { left: 220px; } 
-    to { left: 1000px;}
-}
-
-
+@keyframes approachNS { from { top: -10%; } to { top: 22%; } }
+@keyframes crossNS { from { top: 22%; } to { top: 100%; } }
+@keyframes approachEW { from { left: -10%; } to { left: 22%; } }
+@keyframes crossEW { from { left: 22%; } to { left: 100%; } }
 
 .border {
     position: relative;
-    width: 1275px;
-    height: 1275px;
-    border: 150px solid #181818;
-    right: 150px;
-    bottom: 150px;
+    width: 100%;
+    max-width: 1275px;
+    aspect-ratio: 1 / 1;
+    border: 12% solid #181818;
+    margin: 0 auto;
 }
 
+@media screen and (max-width: 768px) {
+    .text, .box {
+        width: 95%;
+        padding: 15px;
+        font-size: 0.9rem;
+    }
+
+    .truthtable { width: 95%; }
+
+    .intersection { padding-top: 90%; }
+
+    .car.ns { width: 10%; height: 12%; }
+    .car.ew { width: 12%; height: 10%; }
+}
