@@ -8,10 +8,12 @@
 body {
     background-color: #2e2e2e;
     margin: 0;
+    font-family: Arial, sans-serif;
 }
 
 .site-header {
     background-color: #9b9b9b;
+    color: #000000;
     padding: 20px 50px;
     font-size: 28px;
     font-weight: bold;
@@ -27,6 +29,7 @@ body {
     padding: 40px;
     float: right;
     border-radius: 40px;
+    color: #000000;
     line-height: 1.6;
     font-size: 18px;
     transform: translateY(80px);
@@ -38,13 +41,14 @@ body {
 .box {
     position: relative;
     width: 59%;
-    background-color: #9b9b9b;
+    background-color: #000000;
     padding: 40px;
     float: right;
     border-radius: 40px;
+    color: #000000;
     line-height: 1.6;
     font-size: 18px;
-    transform: translateY(80px);
+    transform: translateY(140px);
     box-shadow: black 15px 15px;
     border: 1px solid;
     margin-right: 40px;
@@ -193,9 +197,3 @@ body {
     right: 150px;
     bottom: 150px;
 }
-
-
-
-
-
-
