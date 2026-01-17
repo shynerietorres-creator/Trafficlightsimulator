@@ -24,7 +24,7 @@ body {
 
 .text {
     position: relative;
-    width: 59%;
+    width: 57%;
     background-color: #9b9b9b;
     padding: 40px;
     float: right;
@@ -40,7 +40,7 @@ body {
 
 .box {
     position: relative;
-    width: 59%;
+    width: 57%;
     background-color: #9b9b9b;
     padding: 40px;
     float: right;
@@ -77,7 +77,7 @@ body {
     height: 980px;
     background-color: #555;
     top: 380px;
-    right: 1750px;
+    right: 1650px;
 }
 
 .road.vertical {
@@ -197,3 +197,4 @@ body {
     right: 150px;
     bottom: 150px;
 }
+
